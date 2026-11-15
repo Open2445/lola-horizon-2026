@@ -192,7 +192,9 @@ export function ProvenanceModal({ isOpen, onClose, siteData }: ProvenanceModalPr
                   </div>
                   <div>
                     <span className="text-slate-500">Observer Coordinates: </span>
-                    <span className="text-slate-200">coord@301 (Lon 1.44°E, Lat -80.13°, Alt 2.526 km)</span>
+                    <span className="text-slate-200">
+                      coord@301 (Lon {site.longitude_deg.toFixed(2)}°E, Lat {site.latitude_deg.toFixed(2)}°, Alt {(site.elevation_m / 1000).toFixed(3)} km)
+                    </span>
                   </div>
                 </div>
                 <p className="text-slate-400 text-[11px] pt-1 leading-relaxed">

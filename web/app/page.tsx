@@ -90,7 +90,7 @@ export default function Home() {
   const currentSample = siteData.ephemeris[selectedIndex] || siteData.ephemeris[0];
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#060913] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div className="min-h-screen flex flex-col text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
       {/* Navigation Header */}
       <Navbar
         catalog={catalog}
@@ -254,7 +254,7 @@ export default function Home() {
               Full Provenance & QA Audit
             </button>
             <span>•</span>
-            <span className="text-slate-500">MIT Open Source</span>
+            <span className="text-slate-500">Apache 2.0 Open Source</span>
           </div>
         </div>
       </footer>
