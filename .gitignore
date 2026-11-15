@@ -1,0 +1,34 @@
+# Virtual Environment
+.venv/
+env/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Data cache (keep final normalized data and documentation, ignore large raw DEM binaries)
+data/raw/terrain/*.tif
+data/raw/terrain/*.IMG
+data/raw/terrain/*.img
+!data/raw/terrain/.gitkeep
+!data/raw/ephemeris/.gitkeep
+!data/processed/horizon/.gitkeep
+!data/processed/ephemeris/.gitkeep
+!data/final/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Node / Web
+web/node_modules/
+web/.next/
+web/out/
+web/build/

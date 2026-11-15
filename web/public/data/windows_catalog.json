@@ -1,0 +1,29 @@
+[
+  {
+    "window_id": "im1_2024",
+    "label": "Historical IM-1 Window (Feb 22 \u2013 Mar 07, 2024)",
+    "short_label": "Feb 2024 (IM-1)",
+    "start_utc": "2024-02-22T00:00:00Z",
+    "end_utc": "2024-03-07T00:00:00Z",
+    "description": "Historical Intuitive Machines IM-1 (Odysseus) landing operational window.",
+    "file_suffix": ""
+  },
+  {
+    "window_id": "nov_2026",
+    "label": "Nov 2026 Live Window (Nov 15 \u2013 Nov 29, 2026)",
+    "short_label": "Nov 2026 (Live)",
+    "start_utc": "2026-11-15T00:00:00Z",
+    "end_utc": "2026-11-29T00:00:00Z",
+    "description": "Space Apps 2026 live mission window (Southern Lunar Summer).",
+    "file_suffix": "_nov_2026"
+  },
+  {
+    "window_id": "feb_2027",
+    "label": "Q1 2027 Launch Slip (Feb 15 \u2013 Mar 01, 2027)",
+    "short_label": "Feb 2027 (+3 Mo Slip)",
+    "start_utc": "2027-02-15T00:00:00Z",
+    "end_utc": "2027-03-01T00:00:00Z",
+    "description": "3-month delayed launch window for schedule sensitivity comparison.",
+    "file_suffix": "_feb_2027"
+  }
+]

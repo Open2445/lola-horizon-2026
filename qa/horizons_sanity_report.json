@@ -1,0 +1,49 @@
+{
+  "qa1_coordinate_consistency": {
+    "site_id": "malapert_a",
+    "site_coordinates": {
+      "latitude_deg": -80.13,
+      "longitude_deg": 1.44
+    },
+    "coordinate_reference": "Lunar Mean Earth/Polar Axis (ME) IAU2000",
+    "nasa_lroc_reported_elevation_m": 2579.0,
+    "lola_gdr_sampled_elevation_m": 2526.28,
+    "elevation_difference_m": -52.72,
+    "horizons_observer_altitude_km": 2.526,
+    "horizons_coord_type": "GEODETIC",
+    "horizons_center": "coord@301",
+    "lunar_reference_sphere_radius_km": 1737.4,
+    "datum_analysis": "NASA LROC reports 2,579 m based on the localized LROC NAC stereo digital terrain model derived from NAC pair M1464402633R. Our pipeline samples the NASA PDS LOLA GDR LDEM_75S_240M at 2,526.28 m relative to the standard IAU 1737.4 km reference sphere. The 52.7 m discrepancy is an expected datum and spatial resolution offset between global LOLA altimetry (240 m/px) and local high-resolution stereo photogrammetry (2-5 m/px). Critically, the pipeline uses 2,526.28 m consistently for both the observer ground level and the Horizons topocentric query (2.526 km), ensuring the observer horizon plane and celestial coordinates are rigorously colocated."
+  },
+  "qa2_horizons_checks": {
+    "total_samples": 1345,
+    "expected_samples_14d_15m": 1345,
+    "sample_count_valid": true,
+    "strictly_15m_spaced": true,
+    "start_utc": "2024-02-22T00:00:00Z",
+    "end_utc": "2024-03-07T00:00:00Z",
+    "sun_azimuth_range_deg": [
+      0.0217,
+      359.8929
+    ],
+    "sun_elevation_range_deg": [
+      -6.7927,
+      10.949
+    ],
+    "earth_azimuth_range_deg": [
+      0.0026,
+      359.9887
+    ],
+    "earth_elevation_range_deg": [
+      2.7448,
+      15.9855
+    ],
+    "max_step_deltas": {
+      "sun_azimuth_deg": 0.1289,
+      "sun_elevation_deg": 0.0221,
+      "earth_azimuth_deg": 0.0148,
+      "earth_elevation_deg": 0.0149
+    },
+    "continuous_trajectories": true
+  }
+}
