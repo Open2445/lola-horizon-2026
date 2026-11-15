@@ -229,11 +229,11 @@ export function MissionTimeline({
 
         {/* Time Scale Axis Labels */}
         <div className="flex justify-between text-[11px] font-mono text-slate-500 px-0.5">
-          <span>Day 0 (2024-02-22)</span>
+          <span>Day 0 ({ephemeris[0]?.timestamp_utc.slice(0, 10) ?? ""})</span>
           <span>Day 3.5</span>
-          <span>Day 7 (2024-02-29)</span>
+          <span>Day 7 ({ephemeris[Math.floor(ephemeris.length / 2)]?.timestamp_utc.slice(0, 10) ?? ""})</span>
           <span>Day 10.5</span>
-          <span>Day 14 (2024-03-07)</span>
+          <span>Day 14 ({ephemeris[ephemeris.length - 1]?.timestamp_utc.slice(0, 10) ?? ""})</span>
         </div>
       </div>
 
