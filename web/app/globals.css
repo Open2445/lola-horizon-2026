@@ -1,45 +1,108 @@
 @import "tailwindcss";
 
 :root {
-  --background: #060913;
-  --foreground: #f1f5f9;
-  --card-bg: rgba(15, 23, 42, 0.75);
-  --card-border: rgba(51, 65, 85, 0.4);
+  --background: #04070D;
+  --foreground: #dfe2ec;
+  --card-bg: rgba(10, 14, 21, 0.88);
+  --card-border: rgba(60, 73, 76, 0.58);
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
-  background-image: 
-    radial-gradient(ellipse at 15% 10%, rgba(30, 58, 138, 0.22) 0%, transparent 45%),
-    radial-gradient(ellipse at 85% 90%, rgba(88, 28, 135, 0.18) 0%, transparent 45%),
-    radial-gradient(ellipse at 50% 50%, rgba(15, 23, 42, 0.9) 0%, #060913 100%);
+  background-image:
+    linear-gradient(to right, rgba(34, 211, 238, 0.038) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 211, 238, 0.038) 1px, transparent 1px),
+    radial-gradient(ellipse at 18% 8%, rgba(14, 116, 144, 0.14) 0%, transparent 48%),
+    radial-gradient(ellipse at 85% 92%, rgba(30, 58, 138, 0.14) 0%, transparent 48%);
+  background-size: 24px 24px, 24px 24px, 100% 100%, 100% 100%;
   background-attachment: fixed;
 }
 
-/* Glassmorphism helpers */
-.glass-panel {
-  background: rgba(13, 19, 33, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(56, 189, 248, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+h1, h2, h3, .font-display {
+  font-family: var(--font-space), var(--font-inter), sans-serif;
+  letter-spacing: -0.01em;
 }
 
+.font-mono, code, pre {
+  font-family: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* Stitch Aerospace HUD Panels with L-shaped Corner Reticle Brackets */
+.glass-panel,
+.glass-panel-cyan,
 .glass-panel-amber {
-  background: rgba(18, 16, 12, 0.75);
+  position: relative;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 6px !important;
+  box-shadow: 0 10px 34px -8px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(148, 163, 184, 0.06);
+}
+
+.glass-panel {
+  background: rgba(10, 14, 21, 0.88);
+  border: 1px solid rgba(60, 73, 76, 0.58);
 }
 
 .glass-panel-cyan {
-  background: rgba(8, 20, 36, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(14, 165, 233, 0.2);
+  background: rgba(8, 18, 28, 0.9);
+  border: 1px solid rgba(34, 211, 238, 0.28);
+}
+
+.glass-panel-amber {
+  background: rgba(18, 14, 10, 0.9);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.glass-panel::before,
+.glass-panel::after,
+.glass-panel-cyan::before,
+.glass-panel-cyan::after,
+.glass-panel-amber::before,
+.glass-panel-amber::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.glass-panel::before,
+.glass-panel-cyan::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid #8aebff;
+  border-left: 2px solid #8aebff;
+}
+
+.glass-panel::after,
+.glass-panel-cyan::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid #8aebff;
+  border-right: 2px solid #8aebff;
+}
+
+.glass-panel-amber::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid #fbbf24;
+  border-left: 2px solid #fbbf24;
+}
+
+.glass-panel-amber::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid #fbbf24;
+  border-right: 2px solid #fbbf24;
+}
+
+/* Chamfered tactical button */
+.btn-tactical {
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
 }
 
 /* Custom scrollbars */
@@ -48,11 +111,11 @@ body {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0b0f19;
+  background: #04070D;
 }
 ::-webkit-scrollbar-thumb {
   background: #1e293b;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #334155;
