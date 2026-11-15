@@ -35,7 +35,7 @@ export function KpiCards({ site, metrics, horizonMask, useUpperLimb, minEarthEl 
           </div>
 
           <div className="mt-3 flex items-baseline gap-2">
-            <span className="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight font-mono">
+            <span className="text-3xl sm:text-4xl font-extrabold text-stone-100 tracking-tight font-mono">
               {metrics.total_sunlight_hours.toFixed(1)}
               <span className="text-base font-normal text-amber-400 ml-1">h</span>
             </span>
@@ -44,13 +44,13 @@ export function KpiCards({ site, metrics, horizonMask, useUpperLimb, minEarthEl 
             </span>
           </div>
 
-          <p className="text-xs text-slate-400 mt-1 font-mono">
+          <p className="text-xs text-stone-400 mt-1 font-mono">
             {useUpperLimb ? "Upper limb model (+0.27°)" : "Solar center obstruction model"}
           </p>
         </div>
 
         <div className="mt-4 pt-3 border-t border-amber-950/60 flex items-center justify-between text-xs">
-          <span className="text-slate-400">Longest Window:</span>
+          <span className="text-stone-400">Longest Window:</span>
           <span className="font-semibold font-mono text-amber-200 bg-amber-950/80 px-2 py-0.5 rounded border border-amber-800/40">
             {metrics.longest_sunlight_hours.toFixed(1)} hrs continuous
           </span>
@@ -58,36 +58,36 @@ export function KpiCards({ site, metrics, horizonMask, useUpperLimb, minEarthEl 
       </div>
 
       {/* 2. Geometric Earth Line-of-Sight Card */}
-      <div className="glass-panel-cyan rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden group hover:border-cyan-500/40 transition-all">
-        <div className="absolute top-0 right-0 w-28 h-28 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none group-hover:bg-cyan-500/15 transition-all" />
+      <div className="glass-panel-cyan rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden group hover:border-emerald-500/40 transition-all">
+        <div className="absolute top-0 right-0 w-28 h-28 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none group-hover:bg-emerald-500/15 transition-all" />
         <div>
           <div className="flex items-center justify-between">
-            <span className="text-xs uppercase font-mono tracking-wider text-cyan-300/80 font-semibold flex items-center gap-1.5">
-              <Radio className="w-4 h-4 text-cyan-400" />
+            <span className="text-xs uppercase font-mono tracking-wider text-emerald-300/80 font-semibold flex items-center gap-1.5">
+              <Radio className="w-4 h-4 text-emerald-400" />
               Earth Line-of-Sight
             </span>
-            <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-cyan-950/70 text-cyan-300 border border-cyan-800/60">
+            <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-emerald-950/70 text-emerald-300 border border-emerald-800/60">
               DTE PROXY
             </span>
           </div>
 
           <div className="mt-3 flex items-baseline gap-2">
-            <span className="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight font-mono">
+            <span className="text-3xl sm:text-4xl font-extrabold text-stone-100 tracking-tight font-mono">
               {metrics.total_dte_hours.toFixed(1)}
-              <span className="text-base font-normal text-cyan-400 ml-1">h</span>
+              <span className="text-base font-normal text-emerald-400 ml-1">h</span>
             </span>
-            <span className="text-sm font-semibold text-cyan-300/90 font-mono">
+            <span className="text-sm font-semibold text-emerald-300/90 font-mono">
               ({metrics.dte_coverage_percent.toFixed(1)}%)
             </span>
           </div>
 
-          <p className="text-xs text-slate-400 mt-1 font-mono">
+          <p className="text-xs text-stone-400 mt-1 font-mono">
             {minEarthEl > 0 ? `Operational elevation cutoff ≥ ${minEarthEl}°` : "Pure terrain horizon clearance"}
           </p>
         </div>
 
-        <div className="mt-4 pt-3 border-t border-cyan-950/60 flex items-center justify-between text-xs">
-          <span className="text-slate-400">Max Blackout:</span>
+        <div className="mt-4 pt-3 border-t border-emerald-950/60 flex items-center justify-between text-xs">
+          <span className="text-stone-400">Max Blackout:</span>
           <span
             className={`font-semibold font-mono px-2 py-0.5 rounded border ${
               metrics.longest_dte_blackout_hours > 0
@@ -108,70 +108,70 @@ export function KpiCards({ site, metrics, horizonMask, useUpperLimb, minEarthEl 
         <div>
           <div className="flex items-center justify-between">
             <span className="text-xs uppercase font-mono tracking-wider text-indigo-300/80 font-semibold flex items-center gap-1.5">
-              <Sparkles className="w-4 h-4 text-indigo-400" />
+              <Sparkles className="w-4 h-4 text-orange-400" />
               Simultaneous Sun + LOS
             </span>
-            <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-indigo-950/70 text-indigo-300 border border-indigo-800/60">
+            <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-orange-950/70 text-indigo-300 border border-indigo-800/60">
               OPERATIONAL
             </span>
           </div>
 
           <div className="mt-3 flex items-baseline gap-2">
-            <span className="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight font-mono">
+            <span className="text-3xl sm:text-4xl font-extrabold text-stone-100 tracking-tight font-mono">
               {metrics.total_simultaneous_hours.toFixed(1)}
-              <span className="text-base font-normal text-indigo-400 ml-1">h</span>
+              <span className="text-base font-normal text-orange-400 ml-1">h</span>
             </span>
             <span className="text-sm font-semibold text-indigo-300/90 font-mono">
               ({metrics.simultaneous_coverage_percent.toFixed(1)}%)
             </span>
           </div>
 
-          <p className="text-xs text-slate-400 mt-1 font-mono">
+          <p className="text-xs text-stone-400 mt-1 font-mono">
             Simultaneous geometric visibility
           </p>
         </div>
 
 
-        <div className="mt-4 pt-3 border-t border-indigo-950/60 flex items-center justify-between text-xs">
-          <span className="text-slate-400">Longest Streak:</span>
-          <span className="font-semibold font-mono text-indigo-200 bg-indigo-950/80 px-2 py-0.5 rounded border border-indigo-800/40">
+        <div className="mt-4 pt-3 border-t border-orange-950/60 flex items-center justify-between text-xs">
+          <span className="text-stone-400">Longest Streak:</span>
+          <span className="font-semibold font-mono text-indigo-200 bg-orange-950/80 px-2 py-0.5 rounded border border-indigo-800/40">
             {metrics.longest_simultaneous_hours.toFixed(1)} hrs
           </span>
         </div>
       </div>
 
       {/* 4. Local Topography & Mountain Obstruction */}
-      <div className="glass-panel rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden group hover:border-slate-500/40 transition-all">
-        <div className="absolute top-0 right-0 w-28 h-28 bg-slate-500/10 rounded-full blur-2xl pointer-events-none group-hover:bg-slate-500/15 transition-all" />
+      <div className="glass-panel rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden group hover:border-stone-500/40 transition-all">
+        <div className="absolute top-0 right-0 w-28 h-28 bg-stone-500/10 rounded-full blur-2xl pointer-events-none group-hover:bg-stone-500/15 transition-all" />
         <div>
           <div className="flex items-center justify-between">
-            <span className="text-xs uppercase font-mono tracking-wider text-slate-300/80 font-semibold flex items-center gap-1.5">
-              <Mountain className="w-4 h-4 text-slate-400" />
+            <span className="text-xs uppercase font-mono tracking-wider text-stone-300/80 font-semibold flex items-center gap-1.5">
+              <Mountain className="w-4 h-4 text-stone-400" />
               Terrain Topography
             </span>
-            <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-slate-900 text-slate-300 border border-slate-700">
+            <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-stone-900 text-stone-300 border border-stone-700">
               LOLA DEM
             </span>
           </div>
 
           <div className="mt-3 flex items-baseline gap-2">
-            <span className="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight font-mono">
+            <span className="text-3xl sm:text-4xl font-extrabold text-stone-100 tracking-tight font-mono">
               {site.elevation_m >= 0 ? `+${(site.elevation_m / 1000).toFixed(2)}` : (site.elevation_m / 1000).toFixed(2)}
-              <span className="text-base font-normal text-slate-400 ml-1">km</span>
+              <span className="text-base font-normal text-stone-400 ml-1">km</span>
             </span>
-            <span className="text-xs font-mono text-slate-400">
+            <span className="text-xs font-mono text-stone-400">
               datum 1737.4 km
             </span>
           </div>
 
-          <p className="text-xs text-slate-400 mt-1 font-mono">
+          <p className="text-xs text-stone-400 mt-1 font-mono">
             {site.name} ({site.latitude_deg.toFixed(2)}°S, {site.longitude_deg.toFixed(2)}°E)
           </p>
         </div>
 
-        <div className="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs">
-          <span className="text-slate-400">Max Mountain Rim:</span>
-          <span className="font-semibold font-mono text-slate-200 bg-slate-900 px-2 py-0.5 rounded border border-slate-700/60">
+        <div className="mt-4 pt-3 border-t border-stone-800 flex items-center justify-between text-xs">
+          <span className="text-stone-400">Max Mountain Rim:</span>
+          <span className="font-semibold font-mono text-stone-200 bg-stone-900 px-2 py-0.5 rounded border border-stone-700/60">
             {maxObs.toFixed(1)}° obstruction
           </span>
         </div>

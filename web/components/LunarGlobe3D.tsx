@@ -204,7 +204,7 @@ export function LunarGlobe3D({ site, currentSample }: LunarGlobe3DProps) {
     const ambientLight = new THREE.AmbientLight(0x1e293b, 0.55);
     scene.add(ambientLight);
 
-    const rimLight = new THREE.DirectionalLight(0x38bdf8, 0.28);
+    const rimLight = new THREE.DirectionalLight(0x34d399, 0.28);
     rimLight.position.set(-6, -4, -5);
     scene.add(rimLight);
 
@@ -233,7 +233,7 @@ export function LunarGlobe3D({ site, currentSample }: LunarGlobe3DProps) {
     // Subtle lat/lon graticule wireframe
     const graticuleGeo = new THREE.SphereGeometry(1.808, 24, 18);
     const graticuleMat = new THREE.MeshBasicMaterial({
-      color: 0x38bdf8,
+      color: 0x34d399,
       wireframe: true,
       transparent: true,
       opacity: 0.075,
@@ -246,7 +246,7 @@ export function LunarGlobe3D({ site, currentSample }: LunarGlobe3DProps) {
     const ringY = -1.815 * Math.sin(southLatRad);
     const poleRingGeo = new THREE.RingGeometry(ringRadius - 0.012, ringRadius + 0.012, 64);
     const poleRingMat = new THREE.MeshBasicMaterial({
-      color: 0x22d3ee,
+      color: 0xfbbf24,
       side: THREE.DoubleSide,
       transparent: true,
       opacity: 0.55,
@@ -259,7 +259,7 @@ export function LunarGlobe3D({ site, currentSample }: LunarGlobe3DProps) {
     // Subtle orbital reference halo around the Moon
     const orbitHaloGeo = new THREE.RingGeometry(2.22, 2.235, 96);
     const orbitHaloMat = new THREE.MeshBasicMaterial({
-      color: 0x0ea5e9,
+      color: 0xf59e0b,
       side: THREE.DoubleSide,
       transparent: true,
       opacity: 0.16,
@@ -272,20 +272,20 @@ export function LunarGlobe3D({ site, currentSample }: LunarGlobe3DProps) {
     // 5. Landing Site Beacon (child of moonGroup so it stays locked to coordinates)
     const markerGroup = new THREE.Group();
     const pinGeo = new THREE.CylinderGeometry(0.012, 0.012, 0.28, 16);
-    const pinMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8 });
+    const pinMat = new THREE.MeshBasicMaterial({ color: 0x34d399 });
     const pinMesh = new THREE.Mesh(pinGeo, pinMat);
     pinMesh.position.y = 0.14;
     markerGroup.add(pinMesh);
 
     const tipGeo = new THREE.SphereGeometry(0.036, 16, 16);
-    const tipMat = new THREE.MeshBasicMaterial({ color: 0x7dd3fc });
+    const tipMat = new THREE.MeshBasicMaterial({ color: 0xfde68a });
     const tipMesh = new THREE.Mesh(tipGeo, tipMat);
     tipMesh.position.y = 0.29;
     markerGroup.add(tipMesh);
 
     const ringGeo = new THREE.RingGeometry(0.045, 0.075, 32);
     const ringMat = new THREE.MeshBasicMaterial({
-      color: 0x22d3ee,
+      color: 0xfbbf24,
       side: THREE.DoubleSide,
       transparent: true,
       opacity: 0.85,
@@ -315,7 +315,7 @@ export function LunarGlobe3D({ site, currentSample }: LunarGlobe3DProps) {
       new THREE.Vector3(0, 1, 0),
       new THREE.Vector3(0, 0, 0),
       2.65,
-      0x38bdf8,
+      0x34d399,
       0.22,
       0.11
     );
@@ -458,18 +458,18 @@ export function LunarGlobe3D({ site, currentSample }: LunarGlobe3DProps) {
 
   return (
     <div className="glass-panel rounded-2xl p-4 sm:p-6 flex flex-col gap-4 relative overflow-hidden">
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-stone-800 pb-3">
         <div>
           <div className="flex items-center gap-2">
-            <h2 className="text-base font-bold text-slate-100 flex items-center gap-2">
-              <Orbit className="w-5 h-5 text-cyan-400" />
+            <h2 className="text-base font-bold text-stone-100 flex items-center gap-2">
+              <Orbit className="w-5 h-5 text-emerald-400" />
               3D Lunar Globe & Celestial Orientation
             </h2>
             <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-amber-950/70 text-amber-300 border border-amber-800/80 font-bold">
               Contextual Visualization Only
             </span>
           </div>
-          <p className="text-xs text-slate-400 font-mono mt-0.5">
+          <p className="text-xs text-stone-400 font-mono mt-0.5">
             Macro Planetary Orientation Model • Drag to Orbit • Scroll to Zoom
           </p>
         </div>
@@ -478,7 +478,7 @@ export function LunarGlobe3D({ site, currentSample }: LunarGlobe3DProps) {
           <button
             onClick={focusSouthPole}
             title="Focus South Pole (75°S–90°S)"
-            className="text-xs px-2 py-1 rounded-lg border border-slate-700 bg-slate-900 hover:bg-slate-800 text-cyan-300 font-mono flex items-center gap-1 transition-all"
+            className="text-xs px-2 py-1 rounded-lg border border-stone-700 bg-stone-900 hover:bg-stone-800 text-emerald-300 font-mono flex items-center gap-1 transition-all"
           >
             <Crosshair className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">75°S</span>
@@ -486,14 +486,14 @@ export function LunarGlobe3D({ site, currentSample }: LunarGlobe3DProps) {
           <button
             onClick={() => handleZoom(-0.4)}
             title="Zoom In"
-            className="text-xs p-1.5 rounded-lg border border-slate-700 bg-slate-900 hover:bg-slate-800 text-slate-300 transition-all"
+            className="text-xs p-1.5 rounded-lg border border-stone-700 bg-stone-900 hover:bg-stone-800 text-stone-300 transition-all"
           >
             <ZoomIn className="w-3.5 h-3.5" />
           </button>
           <button
             onClick={() => handleZoom(0.4)}
             title="Zoom Out"
-            className="text-xs p-1.5 rounded-lg border border-slate-700 bg-slate-900 hover:bg-slate-800 text-slate-300 transition-all"
+            className="text-xs p-1.5 rounded-lg border border-stone-700 bg-stone-900 hover:bg-stone-800 text-stone-300 transition-all"
           >
             <ZoomOut className="w-3.5 h-3.5" />
           </button>
@@ -501,8 +501,8 @@ export function LunarGlobe3D({ site, currentSample }: LunarGlobe3DProps) {
             onClick={() => setIsRotating(!isRotating)}
             className={`text-xs px-2.5 py-1 rounded-lg border font-mono flex items-center gap-1.5 transition-all ${
               isRotating
-                ? "bg-cyan-950/80 border-cyan-800 text-cyan-300"
-                : "bg-slate-900 border-slate-700 text-slate-400"
+                ? "bg-emerald-950/80 border-emerald-800 text-emerald-300"
+                : "bg-stone-900 border-stone-700 text-stone-400"
             }`}
           >
             <RotateCw className={`w-3.5 h-3.5 ${isRotating ? "animate-spin" : ""}`} />
@@ -512,49 +512,49 @@ export function LunarGlobe3D({ site, currentSample }: LunarGlobe3DProps) {
       </div>
 
       {/* Three.js Canvas Container + Mission Control HUD */}
-      <div className="relative rounded-xl overflow-hidden bg-slate-950/70 border border-slate-800/60">
+      <div className="relative rounded-xl overflow-hidden bg-stone-950/70 border border-stone-800/60">
         <div
           ref={mountRef}
           className="w-full h-[380px] cursor-grab active:cursor-grabbing"
         />
 
         {/* Top-left HUD */}
-        <div className="pointer-events-none absolute top-3 left-3 bg-slate-950/75 backdrop-blur-sm border border-slate-800/90 rounded-lg px-2.5 py-1.5 text-[10px] font-mono text-slate-300 space-y-0.5">
-          <div className="text-cyan-400 font-bold uppercase tracking-wider">
+        <div className="pointer-events-none absolute top-3 left-3 bg-stone-950/75 backdrop-blur-sm border border-stone-800/90 rounded-lg px-2.5 py-1.5 text-[10px] font-mono text-stone-300 space-y-0.5">
+          <div className="text-emerald-400 font-bold uppercase tracking-wider">
             {site.name}
           </div>
           <div>
             LAT {site.latitude_deg.toFixed(2)}° • LON {site.longitude_deg.toFixed(2)}°
           </div>
-          <div className="text-slate-400">
+          <div className="text-stone-400">
             ZOOM {zoomLevel.toFixed(2)}× • 75°S LOLA RING
           </div>
         </div>
 
         {/* Bottom-right live celestial vector HUD */}
-        <div className="pointer-events-none absolute bottom-3 right-3 bg-slate-950/75 backdrop-blur-sm border border-slate-800/90 rounded-lg px-2.5 py-1.5 text-[10px] font-mono space-y-0.5 text-right">
+        <div className="pointer-events-none absolute bottom-3 right-3 bg-stone-950/75 backdrop-blur-sm border border-stone-800/90 rounded-lg px-2.5 py-1.5 text-[10px] font-mono space-y-0.5 text-right">
           <div className="text-amber-300">
             SUN EL {currentSample.sun.elevation_deg.toFixed(2)}° • AZ {currentSample.sun.azimuth_deg.toFixed(1)}°
           </div>
-          <div className="text-cyan-300">
+          <div className="text-emerald-300">
             EARTH EL {currentSample.earth.elevation_deg.toFixed(2)}° • AZ {currentSample.earth.azimuth_deg.toFixed(1)}°
           </div>
         </div>
       </div>
 
       {/* Overlays / Vectors Legend */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs font-mono pt-2 border-t border-slate-800">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs font-mono pt-2 border-t border-stone-800">
         <div className="flex items-center gap-2">
-          <div className="w-3 h-3 rounded-full bg-cyan-400 shadow-sm shadow-cyan-400" />
-          <span className="text-slate-300">{site.name} Landing Site Pin</span>
+          <div className="w-3 h-3 rounded-full bg-emerald-400 shadow-sm shadow-amber-400" />
+          <span className="text-stone-300">{site.name} Landing Site Pin</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-4 h-0.5 bg-amber-400" />
           <span className="text-amber-300">Sun Illumination Vector</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-4 h-0.5 bg-cyan-400" />
-          <span className="text-cyan-300">Earth Direct Line-of-Sight</span>
+          <div className="w-4 h-0.5 bg-emerald-400" />
+          <span className="text-emerald-300">Earth Direct Line-of-Sight</span>
         </div>
       </div>
 
