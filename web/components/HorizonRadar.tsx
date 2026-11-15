@@ -84,17 +84,17 @@ export function HorizonRadar({
 
   return (
     <div className="glass-panel rounded-2xl p-4 sm:p-6 flex flex-col items-center gap-4 relative overflow-hidden">
-      <div className="w-full flex items-center justify-between border-b border-stone-800 pb-3">
+      <div className="w-full flex items-center justify-between border-b border-slate-800 pb-3">
         <div>
-          <h2 className="text-base font-bold text-stone-100 flex items-center gap-2">
-            <Compass className="w-5 h-5 text-emerald-400" />
+          <h2 className="text-base font-bold text-slate-100 flex items-center gap-2">
+            <Compass className="w-5 h-5 text-cyan-400" />
             Polar Horizon Obstruction Radar
           </h2>
-          <p className="text-xs text-stone-400 font-mono">
+          <p className="text-xs text-slate-400 font-mono">
             360° Topocentric Horizon Silhouette vs Sun / Earth Trajectories
           </p>
         </div>
-        <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-stone-900 text-stone-300 border border-stone-700">
+        <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-slate-900 text-slate-300 border border-slate-700">
           Scale: 0° to +20° El
         </span>
       </div>
@@ -154,7 +154,7 @@ export function HorizonRadar({
           <line x1={center - maxRadius} y1={center} x2={center + maxRadius} y2={center} stroke="#334155" strokeWidth="1" opacity="0.4" />
 
           {/* Cardinal Directions Labels */}
-          <text x={center} y={center - maxRadius - 10} textAnchor="middle" fill="#34d399" fontSize="12" fontWeight="bold" fontFamily="monospace">N (0°)</text>
+          <text x={center} y={center - maxRadius - 10} textAnchor="middle" fill="#38bdf8" fontSize="12" fontWeight="bold" fontFamily="monospace">N (0°)</text>
           <text x={center + maxRadius + 18} y={center + 4} textAnchor="middle" fill="#94a3b8" fontSize="11" fontWeight="bold" fontFamily="monospace">E (90°)</text>
           <text x={center} y={center + maxRadius + 18} textAnchor="middle" fill="#94a3b8" fontSize="11" fontWeight="bold" fontFamily="monospace">S (180°)</text>
           <text x={center - maxRadius - 18} y={center + 4} textAnchor="middle" fill="#94a3b8" fontSize="11" fontWeight="bold" fontFamily="monospace">W (270°)</text>
@@ -184,7 +184,7 @@ export function HorizonRadar({
           <path
             d={earthPathD}
             fill="none"
-            stroke="#34d399"
+            stroke="#38bdf8"
             strokeWidth="1.5"
             strokeDasharray="2,3"
             opacity="0.55"
@@ -207,7 +207,7 @@ export function HorizonRadar({
             y1={center}
             x2={currentEarthPos.x}
             y2={currentEarthPos.y}
-            stroke="#34d399"
+            stroke="#38bdf8"
             strokeWidth="1.2"
             opacity="0.6"
           />
@@ -240,7 +240,7 @@ export function HorizonRadar({
               cx={currentEarthPos.x}
               cy={currentEarthPos.y}
               r="6.5"
-              fill="#f59e0b"
+              fill="#0ea5e9"
               stroke="#fff"
               strokeWidth="2"
             />
@@ -249,7 +249,7 @@ export function HorizonRadar({
               cy={currentEarthPos.y}
               r="11"
               fill="none"
-              stroke="#34d399"
+              stroke="#38bdf8"
               strokeWidth="1"
               opacity="0.7"
             />
@@ -262,22 +262,22 @@ export function HorizonRadar({
       </div>
 
       {/* Legend & Interpretation Guide */}
-      <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-mono pt-2 border-t border-stone-800/80">
+      <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-mono pt-2 border-t border-slate-800/80">
         <div className="flex items-center gap-2">
-          <div className="w-3.5 h-3.5 rounded bg-stone-700 border border-stone-500" />
-          <span className="text-stone-300">Terrain Obstruction</span>
+          <div className="w-3.5 h-3.5 rounded bg-slate-700 border border-slate-500" />
+          <span className="text-slate-300">Terrain Obstruction</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-3.5 h-3.5 rounded-full bg-amber-400 border border-white shadow-sm shadow-amber-400" />
           <span className="text-amber-300">Sun Position</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-3.5 h-3.5 rounded-full bg-emerald-400 border border-white shadow-sm shadow-emerald-400" />
-          <span className="text-emerald-300">Earth Position</span>
+          <div className="w-3.5 h-3.5 rounded-full bg-sky-400 border border-white shadow-sm shadow-sky-400" />
+          <span className="text-sky-300">Earth Position</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-4 h-0.5 border-t border-dashed border-amber-400/80" />
-          <span className="text-stone-400">14-Day Trajectory</span>
+          <span className="text-slate-400">14-Day Trajectory</span>
         </div>
       </div>
     </div>
