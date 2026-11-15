@@ -154,15 +154,16 @@ export function LunarGlobe3D({ site, currentSample }: LunarGlobe3DProps) {
     const width = container.clientWidth || 560;
     const height = 380;
 
-    // 1. Scene, Camera, Renderer
+    // 1. Scene, Camera, Renderer (Pure black deep space)
     const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x000000);
 
     const camera = new THREE.PerspectiveCamera(38, width / height, 0.1, 1000);
     camera.position.set(0, -2.4, 4.2);
     camera.lookAt(0, 0, 0);
     cameraRef.current = camera;
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -200,11 +201,11 @@ export function LunarGlobe3D({ site, currentSample }: LunarGlobe3DProps) {
     const stars = new THREE.Points(starGeo, starMat);
     scene.add(stars);
 
-    // 3. Lighting (Earthshine ambient + Directional Sun + subtle rim fill)
-    const ambientLight = new THREE.AmbientLight(0x1e293b, 0.55);
+    // 3. Lighting (Neutral lunar earthshine + Directional Sun + subtle neutral rim fill)
+    const ambientLight = new THREE.AmbientLight(0x18181b, 0.35);
     scene.add(ambientLight);
 
-    const rimLight = new THREE.DirectionalLight(0x38bdf8, 0.28);
+    const rimLight = new THREE.DirectionalLight(0xd4d4d8, 0.15);
     rimLight.position.set(-6, -4, -5);
     scene.add(rimLight);
 
@@ -512,7 +513,7 @@ export function LunarGlobe3D({ site, currentSample }: LunarGlobe3DProps) {
       </div>
 
       {/* Three.js Canvas Container + Mission Control HUD */}
-      <div className="relative rounded-xl overflow-hidden bg-slate-950/70 border border-slate-800/60">
+      <div className="relative rounded-xl overflow-hidden bg-black border border-slate-700/60">
         <div
           ref={mountRef}
           className="w-full h-[380px] cursor-grab active:cursor-grabbing"
